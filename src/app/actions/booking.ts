@@ -17,9 +17,17 @@ export async function submitBooking(formData: {
     }
 
     // Prepare event times
-    // Assuming 1 hour duration for simplicity
-    const startDateTime = new Date(`${formData.date}T${formData.time.split(" ")[0]}:00`).toISOString();
-    const endDate = new Date(new Date(`${formData.date}T${formData.time.split(" ")[0]}:00`).getTime() + 60 * 60 * 1000);
+    let [time, modifier] = formData.time.split(" ");
+    let [hours, minutes] = time.split(":");
+    if (hours === "12") {
+      hours = "00";
+    }
+    if (modifier === "PM") {
+      hours = (parseInt(hours, 10) + 12).toString();
+    }
+    const isoDate = `${formData.date}T${hours.padStart(2, "0")}:${minutes}:00`;
+    const startDateTime = new Date(isoDate).toISOString();
+    const endDate = new Date(new Date(isoDate).getTime() + 60 * 60 * 1000);
     const endDateTime = endDate.toISOString();
 
     const result = await createCalendarEvent({

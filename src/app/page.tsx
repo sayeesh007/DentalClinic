@@ -204,10 +204,10 @@ export default function Home() {
             <div>
               <h4 className="font-bold mb-6 uppercase tracking-widest text-sm text-primary">Location</h4>
               <p className="text-white/60 mb-4 text-base leading-relaxed">
-                123 Dental Street, Suite 456<br />
-                Innovation District, CA 90210
+                123 Innovation St, Suite 456<br />
+                Bengaluru, KA 560001
               </p>
-              <p className="text-accent font-bold text-base">+1 (555) 999-8888</p>
+              <p className="text-accent font-bold text-base">+91 999 888 8888</p>
             </div>
           </div>
           <div className="pt-8 border-t border-white/5 text-center text-white/20 text-sm font-medium">

@@ -64,10 +64,11 @@ const BeforeAfterSlider = ({
     >
       {/* After Image (Background) */}
       <div className="absolute inset-0">
-        <img 
+        <Image 
           src={afterImage} 
-          alt="After" 
-          className="w-full h-full object-cover"
+          alt="After Transformation" 
+          fill
+          className="object-cover"
         />
         <div className="absolute bottom-6 right-6 px-4 py-2 rounded-xl glass text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity">
           {afterLabel}
@@ -79,10 +80,11 @@ const BeforeAfterSlider = ({
         className="absolute inset-0 z-10"
         style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
       >
-        <img 
+        <Image 
           src={beforeImage} 
-          alt="Before" 
-          className="w-full h-full object-cover"
+          alt="Before Transformation" 
+          fill
+          className="object-cover"
         />
         <div className="absolute bottom-6 left-6 px-4 py-2 rounded-xl glass text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity">
           {beforeLabel}
