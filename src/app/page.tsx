@@ -56,7 +56,7 @@ export default function Home() {
               transition={{ delay: 0.2 }}
               className="text-white/60 text-base md:text-lg"
             >
-              Combining clinical excellence with the "Antigravity" experience. 
+              Combining clinical excellence with the &quot;Antigravity&quot; experience. 
               Each procedure is tailored to your unique anatomy.
             </motion.p>
           </div>

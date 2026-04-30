@@ -33,7 +33,7 @@ const ContactSection = () => {
                   transition={{ delay: 0.1 }}
                   className="text-4xl md:text-5xl font-black text-white leading-tight italic"
                 >
-                  Let's discuss your <span className="text-accent">dream smile</span>.
+                  Let&apos;s discuss your <span className="text-accent">dream smile</span>.
                 </motion.h3>
               </div>
 
@@ -113,7 +113,14 @@ const ContactSection = () => {
   );
 };
 
-const ContactInfoItem = ({ icon: Icon, title, content, delay }: any) => (
+interface ContactInfoItemProps {
+  icon: React.ElementType;
+  title: string;
+  content: string;
+  delay: number;
+}
+
+const ContactInfoItem = ({ icon: Icon, title, content, delay }: ContactInfoItemProps) => (
   <motion.div
     initial={{ opacity: 0, y: 10 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -131,7 +138,13 @@ const ContactInfoItem = ({ icon: Icon, title, content, delay }: any) => (
   </motion.div>
 );
 
-const FormInput = ({ label, placeholder, type = "text" }: any) => (
+interface FormInputProps {
+  label: string;
+  placeholder: string;
+  type?: string;
+}
+
+const FormInput = ({ label, placeholder, type = "text" }: FormInputProps) => (
   <div className="space-y-2">
     <label className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] ml-2">{label}</label>
     <input

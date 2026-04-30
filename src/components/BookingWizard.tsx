@@ -5,10 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { 
   ChevronRight, 
   ChevronLeft, 
-  Calendar, 
-  User, 
   CheckCircle2,
-  Clock,
   Briefcase,
   Loader2
 } from "lucide-react";
@@ -59,7 +56,7 @@ const BookingWizard = () => {
       } else {
         alert(result.error);
       }
-    } catch (err) {
+    } catch {
       alert("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
@@ -241,7 +238,7 @@ const BookingWizard = () => {
                 </div>
               </div>
               <p className="text-white/40 max-w-sm">
-                Our team will reach out to you via WhatsApp shortly to finalize your "Antigravity" session.
+                Our team will reach out to you via WhatsApp shortly to finalize your &quot;Antigravity&quot; session.
               </p>
               <button 
                 onClick={() => setStep(1)}

@@ -17,8 +17,9 @@ export async function submitBooking(formData: {
     }
 
     // Prepare event times
-    let [time, modifier] = formData.time.split(" ");
-    let [hours, minutes] = time.split(":");
+    const [time, modifier] = formData.time.split(" ");
+    const [rawHours, minutes] = time.split(":");
+    let hours = rawHours;
     if (hours === "12") {
       hours = "00";
     }
@@ -43,9 +44,8 @@ export async function submitBooking(formData: {
       attendeeEmail: formData.email,
     });
 
-    console.log("Booking successfully processed:", result);
     return { success: true, message: "Appointment requested successfully!" };
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Booking submission error:", error);
     return { success: false, error: "Failed to process booking. Please try again." };
   }

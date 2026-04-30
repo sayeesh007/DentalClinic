@@ -14,7 +14,6 @@ export const metadata: Metadata = {
   keywords: ["dental clinic", "teeth whitening", "orthodontics", "param clinic", "painless dentistry"],
 };
 
-import Navbar from "@/components/Navbar";
 import CustomCursor from "@/components/CustomCursor";
 
 export default function RootLayout({
